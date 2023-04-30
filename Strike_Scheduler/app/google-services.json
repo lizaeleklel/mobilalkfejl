@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "913514506599",
+    "project_id": "strike-scheduler",
+    "storage_bucket": "strike-scheduler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913514506599:android:5d72996c9541497a44e7c2",
+        "android_client_info": {
+          "package_name": "com.example.strike_scheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913514506599-evtu3oer6fve3rb2si0te7ae485gv360.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.strike_scheduler",
+            "certificate_hash": "974016acadc9df6533e12785e6431f3b68bac818"
+          }
+        },
+        {
+          "client_id": "913514506599-ej02ifddee2lg0lapimsi1mmiknhcutl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu2XmuLViFHwASsNcte1YqHddMrDERR5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913514506599-ej02ifddee2lg0lapimsi1mmiknhcutl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

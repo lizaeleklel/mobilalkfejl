@@ -48,19 +48,23 @@ public class LoginActivity extends AppCompatActivity {
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
 
-         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.i(LOG_TAG, "User loged in successfully");
-                    Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_LONG).show();
-                    startBowlingActivity();
-                } else {
-                    Log.i(LOG_TAG, "User log in fail ");
-                    Toast.makeText(LoginActivity.this, "User login fail: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+        if (email.isEmpty() || password.isEmpty()){
+            Toast.makeText(LoginActivity.this, "Please add your email and password!", Toast.LENGTH_LONG).show();
+        } else {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Log.i(LOG_TAG, "User loged in successfully");
+                        Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_LONG).show();
+                        startBowlingActivity();
+                    } else {
+                        Log.i(LOG_TAG, "User log in fail ");
+                        Toast.makeText(LoginActivity.this, "User login fail: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     private void startBowlingActivity(/* user data*/) {

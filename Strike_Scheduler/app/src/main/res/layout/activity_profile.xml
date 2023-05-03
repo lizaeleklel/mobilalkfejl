@@ -10,19 +10,21 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/yellow" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Navbar here -->
+            <!-- Navbar -->
             <LinearLayout
                 android:id="@+id/menu_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:background="@color/blue">
 
                 <TextView
                     android:id="@+id/cim"
@@ -42,21 +44,11 @@
                     android:layout_height="60dp"
                     android:background="@color/blue"
                     android:contentDescription="Bowling"
-                    android:onClick="refresh"
+                    android:onClick="bowling"
                     android:padding="13dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/bowling" />
 
-                <ImageButton
-                    android:id="@+id/button_contact"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@color/blue"
-                    android:contentDescription="Contact"
-                    android:onClick="contact"
-                    android:padding="13dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/info" />
 
                 <ImageButton
                     android:id="@+id/button_profile"
@@ -84,9 +76,85 @@
 
             </LinearLayout>
 
+            <!-- Profile Text -->
+            <TextView
+                android:id="@+id/profileTextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:text="Profile"
+                android:textColor="@color/rose"
+                android:textStyle="italic"
+                android:textSize="45sp"
+                android:gravity="center" />
+
             <!-- Profile here -->
+            <LinearLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/yellow"
+                android:orientation="vertical" />
 
+                <EditText
+                    android:id="@id/userEmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/profileTextview"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:ems="10"
+                    android:hint="@string/email_adress"
+                    android:inputType="textEmailAddress" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/userEmailEditText"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+
+                <!-- Buttons here -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/passwordEditText"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:hint="Save changes"
+                        android:backgroundTint="@color/blue"
+                        android:textColorHint="@color/white"
+                        android:onClick="save"/>
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Delete profile"
+                        android:backgroundTint="@color/blue"
+                        android:textColorHint="@color/white"
+                        android:onClick="delete" />
+                </LinearLayout>
+
+            </LinearLayout>
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

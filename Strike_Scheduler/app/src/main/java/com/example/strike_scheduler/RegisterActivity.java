@@ -22,12 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
     private static final int SECRET_KEY = 99;
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
-    EditText userFirstNameEditText;
-    EditText userLastNameEditText;
     EditText userEmailEditText;
     EditText passwordEditText;
     EditText passwordAgainEditText;
-    EditText phoneEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
             finish(); //eltakaritja ezt az activityt es visszater az elozo activityre
         }
 
-        userFirstNameEditText = findViewById(R.id.userFirstNameEditText);
-        userLastNameEditText = findViewById(R.id.userLastNameEditText);
         userEmailEditText = findViewById(R.id.userEmailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         passwordAgainEditText = findViewById(R.id.passwordAgainEditText);
-        phoneEditText = findViewById(R.id.phoneEditText);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         String email = preferences.getString("email", "");
@@ -61,35 +55,33 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void register(View view) {
-        String userFristName = userFirstNameEditText.getText().toString();
-        String userLastName = userLastNameEditText.getText().toString();
         String userEmail = userEmailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String passwordConfirm = passwordAgainEditText.getText().toString();
-        String phoneNumber = phoneEditText.getText().toString();
 
-        if(!password.equals(passwordConfirm)){
-            Log.e(LOG_TAG, "Passwords don't match!");
-            return;
+        if (userEmail.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()){
+            Toast.makeText(RegisterActivity.this, "Fill out everything", Toast.LENGTH_LONG).show();
+        } else if(!password.equals(passwordConfirm)){
+                Log.e(LOG_TAG, "Passwords don't match!");
+                Toast.makeText(this, "Passwords don't match!\nTry again.", Toast.LENGTH_SHORT).show();
+                return;
+        } else {
+            mAuth.createUserWithEmailAndPassword(userEmail, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Log.i(LOG_TAG, "User created successfully");
+                        Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_LONG).show();
+                        startLoginActivity();
+                    } else {
+                        Log.i(LOG_TAG, "User wasn't created ");
+                        Toast.makeText(RegisterActivity.this, "User wasn't created: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
 
-        Log.i(LOG_TAG, "Registration successful "+ userFristName + "!");
-
-        //idopontfoglalas()
-
-        mAuth.createUserWithEmailAndPassword(userEmail, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Log.i(LOG_TAG, "User created successfully");
-                    Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_LONG).show();
-                    startLoginActivity();
-                } else {
-                    Log.i(LOG_TAG, "User wasn't created ");
-                    Toast.makeText(RegisterActivity.this, "User wasn't created: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        Log.i(LOG_TAG, "Registration successful!");
     }
 
     private void startLoginActivity(/* user data*/) {

@@ -15,10 +15,14 @@
         <ImageView
             android:id="@+id/background_picture"
             android:layout_width="match_parent"
-            android:layout_height="576dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="120dp"
+            android:padding="20dp"
+            android:alpha="0.3"
             android:scaleType="centerCrop"
-            android:alpha="0.5"
-            android:src="@drawable/pin" />
+            android:src="@drawable/bowling3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green" />
 
         <TextView
             android:id="@+id/registrationTextView"
@@ -34,37 +38,6 @@
             android:textSize="45sp"
             android:gravity="center" />
 
-        <LinearLayout
-            android:id="@+id/register_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/registrationTextView">
-
-            <EditText
-                android:id="@+id/userFirstNameEditText"
-                android:layout_width="170dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:hint="@string/user_first_name"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/userLastNameEditText"
-                android:layout_width="170dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="20dp"
-                android:ems="10"
-                android:hint="@string/user_last_name"
-                android:inputType="textPersonName"
-                />
-
-        </LinearLayout>
 
         <EditText
             android:id="@+id/userEmailEditText"
@@ -76,13 +49,13 @@
             android:ems="10"
             android:hint="@string/email_adress"
             android:inputType="textEmailAddress"
-            android:layout_below="@id/register_linearlayout" />
+            android:layout_below="@id/registrationTextView" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:ems="10"
@@ -94,7 +67,7 @@
             android:id="@+id/passwordAgainEditText"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:ems="10"
@@ -102,24 +75,12 @@
             android:inputType="textPassword"
             android:layout_below="@id/passwordEditText" />
 
-        <EditText
-            android:id="@+id/phoneEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:ems="10"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
-            android:layout_below="@id/passwordAgainEditText" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/phoneEditText"
-            android:layout_marginTop="60dp"
+            android:layout_below="@id/passwordAgainEditText"
+            android:layout_marginTop="80dp"
             android:layout_centerHorizontal="true"
             >
 

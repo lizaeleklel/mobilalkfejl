@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">Strike_Scheduler</string>
     <string name="strike_scheduler">Strike Scheduler</string>
-    <string name="user_first_name">First name</string>
-    <string name="user_last_name">Last name</string>
     <string name="email_adress">Email</string>
     <string name="password">Password</string>
     <string name="password_again">Password again</string>
-    <string name="phone_number">Phone number</string>
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
     <string name="login">Login</string>
@@ -15,7 +12,7 @@
     <string name="information">Information</string>
     <string name="logout">Logout</string>
     <string name="prices_textview">&lt;b&gt;PRICES&lt;/b&gt;&lt;br&gt;Every day&lt;br&gt;From opening - 4 pm $22/hour&lt;br&gt;4 pm - Closing time $30/hour&lt;br&gt;&lt;br&gt;Socks: 2$/pair&lt;br&gt;&lt;i&gt;(Socks can be bought on the spot, for hygiene reasons shoes can only be used with socks!)&lt;/i&gt;&lt;br&gt;The prices include a fee for the provision of shoes.</string>
-    <string name="track_booking_textview">&lt;b&gt;TRACK BOOKING&lt;/b&gt; A reservation that has been approved but not started will be cancelled 15 minutes after the start of the reservation without any indication from the guest. Track reservation here (name, e-mail and phone number are obligatory), for reservations by phone only name and phone number are obligatory! The maximum number of players on a course is &lt;b&gt;6&lt;/b&gt;!</string>
+    <string name="track_booking_textview">&lt;b&gt;TRACK BOOKING&lt;/b&gt; A reservation that has been approved but not started will be cancelled 15 minutes after the start of the reservation without any indication from the guest. Track reservation here (name and email are obligatory), for reservations by phone only name and phone number are obligatory! The maximum number of players on a course is &lt;b&gt;6&lt;/b&gt;!</string>
     <string name="drinklist"><![CDATA[&lt;b&gt;DRINKS&lt;/b&gt; &lt;br&gt; Mineral water&lt;br&gt; Coca-Cola, Fanta, Tonic&lt;br&gt; Orange, Apple, Peach, Berry Juice&lt;br&gt; &lt;br&gt; RedBull, Monster&lt;br&gt; Latte, Capuccino, Espresso&lt;br&gt; &lt;br&gt; &lt;i&gt;For alchoholic beverages, ask the staff for our list!&lt;/i&gt;]]></string>
     <string name="foodlist"><![CDATA[&lt;b&gt;FOOD&lt;/b&gt; &lt;br&gt; Pizza&lt;br&gt; Burger&lt;br&gt; Veggie Burger&lt;br&gt; Grilled Cheese Sandwich&lt;br&gt; Celery and carrot with hummus&lt;br&gt; Nachos plate with 2 selected dips&lt;br&gt; French fries with a selected dip&lt;br&gt; &lt;br&gt; &lt;i&gt;About our pizza and burger variety, ask the staff!&lt;/i&gt;]]></string>
     <string name="note">Note</string>

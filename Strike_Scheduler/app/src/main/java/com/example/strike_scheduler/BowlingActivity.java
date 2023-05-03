@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -52,7 +53,7 @@ public class BowlingActivity extends AppCompatActivity {
         TextView track_booking_TextView = findViewById(R.id.track_booking_textview);
         track_booking_TextView.setText(Html.fromHtml("<b>TRACK BOOKING</b><br><br>" +
                 "A reservation that has been approved but not started will be cancelled 15 minutes after the start of the reservation without any indication from the guest.<br>" +
-                "Track reservation here (name, e-mail and phone number are obligatory), for reservations by phone only name and phone number are obligatory!<br>" +
+                "Track reservation here (name and email are obligatory), for reservations by phone only name and phone number are obligatory!<br>" +
                 "The maximum number of players on a course is <b>6</b>!"));
 
         TextView foodlist = findViewById(R.id.food);
@@ -91,44 +92,26 @@ public class BowlingActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refresh(view);
+                        bowling(view);
                     }
                 }, 800);
-
             }
         });
 
-    //    ImageButton imageButton_button_profile = findViewById(R.id.button_profile);
-    //    imageButton_button_profile.setOnClickListener(new View.OnClickListener() {
-    //        @Override
-    //        public void onClick(View view) {
-    //            Animation animRotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
-    //            imageButton_button_profile.startAnimation(animRotate);
-    //            handler.postDelayed(new Runnable() {
-    //                @Override
-    //                public void run() {
-    //                    profile(view);
-    //                }
-    //            }, 800);
-//
-    //        }
-    //    });
-
-     //   ImageButton imageButton_button_contact = findViewById(R.id.button_contact);
-     //   imageButton_button_contact.setOnClickListener(new View.OnClickListener() {
-     //       @Override
-     //       public void onClick(View view) {
-     //           Animation animRotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
-     //           imageButton_button_contact.startAnimation(animRotate);
-     //           handler.postDelayed(new Runnable() {
-     //               @Override
-     //               public void run() {
-     //                   contact(view);
-     //               }
-     //           }, 800);
-//
-     //       }
-     //   });
+        ImageButton imageButton_button_profile = findViewById(R.id.button_profile);
+        imageButton_button_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation animRotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+                imageButton_button_profile.startAnimation(animRotate);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        profile(view);
+                    }
+                }, 800);
+            }
+        });
 
         ImageButton imageButton_button_logout = findViewById(R.id.button_logout);
         imageButton_button_logout.setOnClickListener(new View.OnClickListener() {
@@ -146,46 +129,22 @@ public class BowlingActivity extends AppCompatActivity {
             }
         });
 
+        Button booking_button = findViewById(R.id.booking_button);
+        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Handler fadeHandler = new Handler();
+        fadeHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                booking_button.startAnimation(fadeInAnimation);
+            }
+        }, 1500);
+
         int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
 
         if (secret_key != SECRET_KEY){
-            finish(); //eltakaritja ezt az activityt es visszater az elozo activityre
+            finish();
         }
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        super.onCreateOptionsMenu(menu);
-//        getMenuInflater().inflate(R.menu.bowling_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.bowling:
-//                Log.d(LOG_TAG, "Bowling clicked!");
-//                return true;
-//            case R.id.profile:
-//                Log.d(LOG_TAG, "profile clicked!");
-//                return true;
-//            case R.id.info:
-//                Log.d(LOG_TAG, "Info clicked!");
-//                return true;
-//            case R.id.logoutItem:
-//                Log.d(LOG_TAG, "Log out clicked!");
-//                FirebaseAuth.getInstance().signOut();
-//                finish();
-//                return true;
-//            default: super.onOptionsItemSelected(item);
-//        }
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        return super.onPrepareOptionsMenu(menu);
-//    }
 
     @Override
     protected void onStart(){
@@ -232,27 +191,24 @@ public class BowlingActivity extends AppCompatActivity {
         Toast.makeText(BowlingActivity.this, "You logged out", Toast.LENGTH_SHORT).show();
         FirebaseAuth.getInstance().signOut();
         finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        startActivity(intent);
     }
 
-   // public void contact(View view) {
-   //     Intent intent = new Intent(this, ContactActivity.class);
-   //     intent.putExtra("SECRET_KEY", SECRET_KEY);
-   //     startActivity(intent);
-   // }
-//
-   // public void profile(View view) {
-   //     Intent intent = new Intent(this, ProfileActivity.class);
-   //     intent.putExtra("SECRET_KEY", SECRET_KEY);
-   //     startActivity(intent);
-   // }
+    public void profile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        startActivity(intent);
+    }
 
-    public void refresh(View view) {
+    public void bowling(View view) {
         Intent intent = new Intent(this, BowlingActivity.class);
         intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);
     }
 
-    public void goToSecondActivity(View view) {
+    public void goToBooking(View view) {
         Intent intent = new Intent(this, BookingActivity.class);
         intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);

@@ -14,8 +14,10 @@
         android:layout_height="match_parent"
         android:padding="150dp"
         android:scaleType="centerCrop"
-        android:alpha="0.3"
-        android:src="@drawable/pin" />
+        android:alpha="0.2"
+        app:tint="@color/green"
+        android:src="@drawable/bowling3"
+        android:contentDescription="pins"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,13 +34,25 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="60dp"
                 android:padding="20dp"
                 android:text="Book your track here!"
                 android:textAlignment="center"
                 android:textColor="@color/rose"
-                android:textSize="34sp"
+                android:textSize="30sp"
                 android:textStyle="italic" />
+
+            <Spinner
+                android:id="@+id/spinner_appointment_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#33FFFFFF"
+                android:padding="30dp"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
 
             <Spinner
                 android:id="@+id/spinner_appointment_duration"
@@ -47,6 +61,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                android:background="#33FFFFFF"
                 android:padding="30dp"
                 android:spinnerMode="dropdown"
                 android:textAlignment="center" />
@@ -58,16 +73,18 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                android:background="#33FFFFFF"
                 android:padding="30dp"
                 android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/note"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                android:background="#33FFFFFF"
                 android:hint="@string/note"
                 android:inputType="textMultiLine"
                 android:maxLines="3" />
@@ -76,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="50dp"
             android:gravity="center"
@@ -85,7 +102,7 @@
 
                 <Button
                     android:id="@+id/booking_button"
-                    android:layout_width="150dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:backgroundTint="@color/blue"
@@ -96,7 +113,7 @@
 
                 <Button
                     android:id="@+id/cancel_button"
-                    android:layout_width="150dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:backgroundTint="@color/blue"

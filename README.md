@@ -20,8 +20,7 @@ Discord: lizaeleklel#0118
 | Legalább egy notification vagy alam manager vagy job scheduler használata    | 2 | 2 |
 | CRUD műveletek mindegyike megvalósult és az adatbázis műveletek a konvenciónak megfelelően külön szálon történnek   | 5 | 4 (nincsenek külön szálon) |
 | Legalább 2 komplex Firestore lekérdezés megvalósítása, amely indexet igényel (ide tartoznak: where feltétel, rendezés, léptetés, limitálás)   | 4 | 0 |
-| Szubjektív pontozás a projekt egészére vonatkozólag: 
-ez 5-ről indul és le lehet vonni, ha igénytelen, összecsapott, látszik hogy nem foglalkozott vele, kísértetiesen hasonlít a videóban létrehozotthoz stb.   | 5 | - |
+| Szubjektív pontozás a projekt egészére vonatkozólag: ez 5-ről indul és le lehet vonni, ha igénytelen, összecsapott, látszik hogy nem foglalkozott vele, kísértetiesen hasonlít a videóban létrehozotthoz stb.   | 5 | - |
 
 | Max. pont | Várható pont |
 | --- | --- |

@@ -1,6 +1,7 @@
-# mobilalkfejl
+# Bowling pálya időpontfoglaló alkalmazás
 
 Ha kérdésed van, akkor az elérhetőségem:
+
 Discord: lizaeleklel#0118
 
 | Elem | Max. pont | Várható pont |

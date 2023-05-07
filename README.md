@@ -4,7 +4,6 @@ Ha kérdésed van, akkor az elérhetőségem:
 Discord: lizaeleklel#0118
 
 | Elem | Max. pont | Várható pont |
-| --- | --- | --- |
 | Fordítási hiba nincs   | 1 | 1 |
 | Futtatási hiba nincs   | 1 | 1 |
 | Firebase autentikáció meg van valósítva: Be lehet jelentkezni és regisztrálni   | 4 | 4 |

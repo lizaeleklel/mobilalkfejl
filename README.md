@@ -1,6 +1,6 @@
 # Bowling pálya időpontfoglaló alkalmazás
 
-Ha kérdésed van, akkor az elérhetőségem:
+Ha kérdésed van, az elérhetőségem:
 
 Discord: lizaeleklel#0118
 
